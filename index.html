@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    
+
+
+    <div class="col-md-6">
+        <div class="form">
+            <form id="submit-form" action="">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <input type="" class="form-control" name="name" placeholder="Your Name" id="name" />
+                        <span id="name" class="bg-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="" class="form-control" name="color" placeholder="phone no" id="no" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="" name="email" class="form-control" placeholder="email" id="mail" />
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" name="message" rows="5" placeholder="Message" id="message"></textarea>
+                </div>
+                <div><button class="btn" type="submit" value="submit">Send Message</button></div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<script>
+    $("#submit-form").submit((e)=>{
+        e.preventDefault()
+        $.ajax({
+            url:"https://script.google.com/macros/s/AKfycbxqWyUFQwz8tFBN4j4MbWGO4CXvJksFgMI5hLDwcMBER1nxKkvnPms0a8U8eLrRO0Ao/exec",
+            data:$("#submit-form").serialize(),
+            method:"post",
+            success:function (response){
+                alert("Form submitted successfully")
+                window.location.reload()
+                //window.location.href="https://google.com"
+            },
+            error:function (err){
+                alert("Something Error")
+
+            }
+        })
+    })
+</script>
+
+
+</body>
+</html>
